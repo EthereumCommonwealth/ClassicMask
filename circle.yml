@@ -1,0 +1,7 @@
+machine:
+  node:
+    version: 8.1.4
+dependencies:
+  pre:
+    - "npm i -g testem"
+    - "npm i -g mocha"
