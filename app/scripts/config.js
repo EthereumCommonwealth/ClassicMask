@@ -5,6 +5,7 @@ global.METAMASK_DEBUG = 'GULP_METAMASK_DEBUG'
 
 module.exports = {
   network: {
-    ethereumclassic: ETHEREUM_CLASSIC_RPC_URL,
+    mainnet: ETHEREUM_CLASSIC_RPC_URL,
+
   },
 }

@@ -240,37 +240,10 @@ App.prototype.renderNetworkDropdown = function () {
     `),
 
     h(DropMenuItem, {
-      label: 'Main Ethereum Network',
+      label: 'Main Ethereum Classic Network',
       closeMenu: () => this.setState({ isNetworkMenuOpen: false }),
       action: () => props.dispatch(actions.setProviderType('mainnet')),
       icon: h('.menu-icon.diamond'),
-      activeNetworkRender: props.network,
-      provider: props.provider,
-    }),
-
-    h(DropMenuItem, {
-      label: 'Ropsten Test Network',
-      closeMenu: () => this.setState({ isNetworkMenuOpen: false }),
-      action: () => props.dispatch(actions.setProviderType('ropsten')),
-      icon: h('.menu-icon.red-dot'),
-      activeNetworkRender: props.network,
-      provider: props.provider,
-    }),
-
-    h(DropMenuItem, {
-      label: 'Kovan Test Network',
-      closeMenu: () => this.setState({ isNetworkMenuOpen: false}),
-      action: () => props.dispatch(actions.setProviderType('kovan')),
-      icon: h('.menu-icon.hollow-diamond'),
-      activeNetworkRender: props.network,
-      provider: props.provider,
-    }),
-
-    h(DropMenuItem, {
-      label: 'Rinkeby Test Network',
-      closeMenu: () => this.setState({ isNetworkMenuOpen: false}),
-      action: () => props.dispatch(actions.setProviderType('rinkeby')),
-      icon: h('.menu-icon.golden-square'),
       activeNetworkRender: props.network,
       provider: props.provider,
     }),
@@ -473,7 +446,7 @@ App.prototype.renderPrimary = function () {
       log.debug('rendering info screen')
       return h(InfoScreen, {key: 'info'})
 
-    case 'buyEth':
+    case 'buyETC':
       log.debug('rendering buy ether screen')
       return h(BuyView, {key: 'buyEthView'})
 
@@ -556,14 +529,8 @@ App.prototype.getNetworkName = function () {
   let name
 
   if (providerName === 'mainnet') {
-    name = 'Main Ethereum Network'
-  } else if (providerName === 'ropsten') {
-    name = 'Ropsten Test Network'
-  } else if (providerName === 'kovan') {
-    name = 'Kovan Test Network'
-  } else if (providerName === 'rinkeby') {
-    name = 'Rinkeby Test Network'
-  } else {
+    name = 'Main Ethereum Classic Network'
+  }  else {
     name = 'Unknown Private Network'
   }
 

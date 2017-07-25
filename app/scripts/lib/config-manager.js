@@ -3,7 +3,7 @@ const normalize = require('eth-sig-util').normalize
 const MetamaskConfig = require('../config.js')
 
 
-const ETHEREUM_CLASSIC_RPC_URL = MetamaskConfig.network.ethereumclassic
+const ETHEREUM_CLASSIC_RPC_URL = MetamaskConfig.network.mainnet
 
 
 /* The config-manager is a convenience object
