@@ -38,17 +38,8 @@ DropMenuItem.prototype.activeNetworkRender = function () {
   if (activeNetwork === undefined) return
 
   switch (this.props.label) {
-    case 'Main Ethereum Network':
+    case 'Main Ethereum Classic Network':
       if (providerType === 'mainnet') return h('.check', '✓')
-      break
-    case 'Ropsten Test Network':
-      if (providerType === 'ropsten') return h('.check', '✓')
-      break
-    case 'Kovan Test Network':
-      if (providerType === 'kovan') return h('.check', '✓')
-      break
-    case 'Rinkeby Test Network':
-      if (providerType === 'rinkeby') return h('.check', '✓')
       break
     case 'Localhost 8545':
       if (activeNetwork === 'http://localhost:8545') return h('.check', '✓')
