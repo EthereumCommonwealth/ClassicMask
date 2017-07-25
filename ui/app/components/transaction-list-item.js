@@ -22,13 +22,13 @@ function TransactionListItem () {
 TransactionListItem.prototype.render = function () {
   const { transaction, network, conversionRate, currentCurrency } = this.props
   if (transaction.key === 'shapeshift') {
-    if (network === '1') return h(ShiftListItem, transaction)
+    if (network === '83') return h(ShiftListItem, transaction)
   }
   var date = formatDate(transaction.time)
 
   let isLinkable = false
   const numericNet = parseInt(network)
-  isLinkable = numericNet === 1 || numericNet === 3 || numericNet === 4 || numericNet === 42
+  isLinkable = numericNet === 83
 
   var isMsg = ('msgParams' in transaction)
   var isTx = ('txParams' in transaction)
