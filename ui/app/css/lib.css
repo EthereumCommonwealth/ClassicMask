@@ -1,11 +1,11 @@
 /* color */
 
 .color-orange {
-  color: #F7861C;
+  color: #4fb858;
 }
 
 .color-forest {
-  color: #0A5448;
+  color: #0a5448;
 }
 
 /* lib */
@@ -176,7 +176,7 @@ hr.horizontal-line {
 }
 
 .red-dot {
-  background: #E91550;
+  background: #e91550;
   color: white;
   border-radius: 10px;
 }
@@ -186,13 +186,18 @@ hr.horizontal-line {
   background: #038789;
 }
 
+.diamond-classic {
+  transform: rotate(45deg);
+  background: #4fb858;
+}
+
 .hollow-diamond {
   transform: rotate(45deg);
   border: 3px solid #690496;
 }
 
 .golden-square {
-  background: #EBB33F;
+  background: #ebb33f;
 }
 
 .pending-dot {
@@ -214,7 +219,7 @@ hr.horizontal-line {
 .keyring-label {
   z-index: 1;
   font-size: 11px;
-  background: rgba(255,0,0,0.8);
+  background: rgba(255, 0, 0, 0.8);
   bottom: -47px;
   color: white;
   border-radius: 10px;
@@ -252,7 +257,7 @@ i.fa.fa-question-circle.fa-lg.menu-icon {
   border-radius: 20px;
 }
 .testnet-icon {
-  background: #2465E1;
+  background: #2465e1;
 }
 
 .drop-menu-item {

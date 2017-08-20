@@ -146,8 +146,13 @@ class AccountDropdowns extends Component {
   }
 
   renderAccountOptions () {
-    const { actions } = this.props
+    const { actions, network } = this.props
     const { optionsMenuActive } = this.state
+    let blockExplorerName = 'Etherscan'
+
+    if (network === 61) {
+      blockExplorerName = 'Gastracker'
+    }
 
     return h(
       Dropdown,
@@ -176,7 +181,7 @@ class AccountDropdowns extends Component {
               global.platform.openWindow({ url })
             },
           },
-          'View account on Etherscan',
+          `View account on ${blockExplorerName}`,
         ),
         h(
           DropdownMenuItem,

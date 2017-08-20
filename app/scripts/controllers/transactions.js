@@ -293,6 +293,7 @@ module.exports = class TransactionController extends EventEmitter {
 
   getChainId () {
     const networkState = this.networkStore.getState()
+    console.log(networkState)
     const getChainId = parseInt(networkState)
     if (Number.isNaN(getChainId)) {
       return 0

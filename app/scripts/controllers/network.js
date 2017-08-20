@@ -5,6 +5,7 @@ const ComposedStore = require('obs-store/lib/composed')
 const extend = require('xtend')
 const EthQuery = require('eth-query')
 const RPC_ADDRESS_LIST = require('../config.js').network
+const ALTERNATIVE_CHAINS = require('../config.js').networkIdAlterantiveChains
 const DEFAULT_RPC = RPC_ADDRESS_LIST['rinkeby']
 
 module.exports = class NetworkController extends EventEmitter {
@@ -85,7 +86,12 @@ module.exports = class NetworkController extends EventEmitter {
     this.ethQuery.sendAsync({ method: 'net_version' }, (err, network) => {
       if (err) return this.setNetworkState('loading')
       log.info('web3.getNetwork returned ' + network)
-      this.setNetworkState(network)
+      this.alternativeChainId = this.getNetworkIdOverwrite(this.getProviderConfig().type)
+      if (this.alternativeChainId) {
+         this.setNetworkState(this.alternativeChainId)
+      } else {
+        this.setNetworkState(network)
+      }
     })
   }
 
@@ -115,6 +121,10 @@ module.exports = class NetworkController extends EventEmitter {
   getRpcAddressForType (type, provider = this.getProviderConfig()) {
     if (RPC_ADDRESS_LIST[type]) return RPC_ADDRESS_LIST[type]
     return provider && provider.rpcTarget ? provider.rpcTarget : DEFAULT_RPC
+  }
+
+  getNetworkIdOverwrite (type) {
+    return ALTERNATIVE_CHAINS[type]
   }
 
   _logBlock (block) {

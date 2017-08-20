@@ -42,6 +42,9 @@ Network.prototype.render = function () {
   } else if (providerName === 'mainnet') {
     hoverText = 'Main Ethereum Network'
     iconName = 'ethereum-network'
+  } else if (providerName === 'classic') {
+    hoverText = 'Main Ethereum Classic Network'
+    iconName = 'ethereum-classic-network'
   } else if (providerName === 'ropsten') {
     hoverText = 'Ropsten Test Network'
     iconName = 'ropsten-test-network'
@@ -74,6 +77,15 @@ Network.prototype.render = function () {
                   color: '#039396',
                 }},
               'Ethereum Main Net'),
+            ])
+          case 'ethereum-classic-network':
+            return h('.network-indicator', [
+              h('.menu-icon.diamond-classic'),
+              h('.network-name', {
+                style: {
+                  color: '#4fb858',
+                }},
+              'Ethereum Classic Main Net'),
             ])
           case 'ropsten-test-network':
             return h('.network-indicator', [

@@ -35,9 +35,10 @@ EthBalanceComponent.prototype.render = function () {
 
   )
 }
+
 EthBalanceComponent.prototype.renderBalance = function (value) {
   var props = this.props
-  const { conversionRate, shorten, incoming, currentCurrency } = props
+  const { conversionRate, shorten, incoming, currentCurrency, network } = props
   if (value === 'None') return value
   if (value === '...') return value
   var balanceObj = generateBalanceObject(value, shorten ? 1 : 3)
@@ -55,10 +56,14 @@ EthBalanceComponent.prototype.renderBalance = function (value) {
 
   var label = balanceObj.label
 
+  if (network == 61) {
+    label = 'ETC'
+  }
+
   return (
     h(Tooltip, {
       position: 'bottom',
-      title: `${ethNumber} ${ethSuffix}`,
+      title: `${ethNumber} ${label}`,
     }, h('div.flex-column', [
       h('.flex-row', {
         style: {

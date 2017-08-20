@@ -183,6 +183,7 @@ AccountDetailScreen.prototype.render = function () {
             value: account && account.balance,
             conversionRate,
             currentCurrency,
+            network,
             style: {
               lineHeight: '7px',
               marginTop: '10px',

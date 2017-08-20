@@ -51,7 +51,6 @@ ConfirmTxScreen.prototype.render = function () {
 
   log.info(`rendering a combined ${unconfTxList.length} unconf msg & txs`)
   if (unconfTxList.length === 0) return h(Loading, { isLoading: true })
-
   return (
 
     h('.flex-column.flex-grow', [

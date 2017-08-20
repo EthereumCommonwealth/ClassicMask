@@ -74,7 +74,7 @@ Notice.prototype.render = function () {
         }
 
         .markdown a {
-          color: #df6b0e;
+          color: #4fb858;
         }
 
       `),

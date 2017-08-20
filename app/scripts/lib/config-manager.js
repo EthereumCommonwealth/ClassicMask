@@ -4,6 +4,7 @@ const MetamaskConfig = require('../config.js')
 
 
 const MAINNET_RPC = MetamaskConfig.network.mainnet
+const CLASSIC_RPC = MetamaskConfig.network.classic
 const ROPSTEN_RPC = MetamaskConfig.network.ropsten
 const KOVAN_RPC = MetamaskConfig.network.kovan
 const RINKEBY_RPC = MetamaskConfig.network.rinkeby
@@ -144,6 +145,9 @@ ConfigManager.prototype.getCurrentRpcAddress = function () {
 
     case 'mainnet':
       return MAINNET_RPC
+
+    case 'classic':
+      return CLASSIC_RPC
 
     case 'ropsten':
       return ROPSTEN_RPC
