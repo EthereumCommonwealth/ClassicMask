@@ -122,7 +122,7 @@ InitializeMenuScreen.prototype.renderMenu = function (state) {
           onClick: this.showRestoreVault.bind(this),
           style: {
             fontSize: '0.8em',
-            color: 'rgb(247, 134, 28)',
+            color: '#4fb858',
             textDecoration: 'underline',
           },
         }, 'Import Existing DEN'),
