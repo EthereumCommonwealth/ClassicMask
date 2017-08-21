@@ -137,6 +137,23 @@ BuyButtonSubview.prototype.primarySubview = function () {
 
     case '1':
       return this.mainnetSubview()
+    case 61:
+      return (
+        h('div.flex-column', {
+          style: {
+            alignItems: 'center',
+            margin: '20px 50px',
+          },
+        }, [
+          h('button.text-transform-uppercase', {
+            onClick: () => this.props.dispatch(actions.buyEth({ network })),
+            style: {
+              marginTop: '15px',
+            },
+          }, 'Buy ETC on Changelly'),
+        ])
+      )
+
 
     // Ropsten, Rinkeby, Kovan
     case '3':
