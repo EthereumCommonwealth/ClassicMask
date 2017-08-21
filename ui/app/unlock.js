@@ -42,8 +42,9 @@ UnlockScreen.prototype.render = function () {
             fontSize: '1.4em',
             textTransform: 'uppercase',
             color: '#7F8082',
+            margin: '1em 0',
           },
-        }, 'MetaMask'),
+        }, 'ClassicMask'),
 
         h('input.large-input', {
           type: 'password',
@@ -77,7 +78,7 @@ UnlockScreen.prototype.render = function () {
           onClick: () => this.props.dispatch(actions.forgotPassword()),
           style: {
             fontSize: '0.8em',
-            color: 'rgb(247, 134, 28)',
+            color: '#4fb858',
             textDecoration: 'underline',
           },
         }, 'I forgot my password.'),
