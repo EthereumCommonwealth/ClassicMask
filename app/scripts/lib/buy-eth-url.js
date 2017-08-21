@@ -20,7 +20,7 @@ function getBuyEthUrl ({ network, amount, address }) {
       break
 
     case 61:
-      url = 'https://changelly.com?ref_id=a4941410f97a'
+      url = 'https://changelly.com?ref_id=e4cc9313b7ed'
       break
   }
   return url
