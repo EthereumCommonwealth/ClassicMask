@@ -191,6 +191,11 @@ hr.horizontal-line {
   background: #4fb858;
 }
 
+.diamond-expanse {
+  transform: rotate(45deg);
+  background: #FBEFBC;
+}
+
 .hollow-diamond {
   transform: rotate(45deg);
   border: 3px solid #690496;

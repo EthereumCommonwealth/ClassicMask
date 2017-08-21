@@ -303,7 +303,22 @@ App.prototype.renderNetworkDropdown = function() {
           providerType === 'classic' ? h('.check', '✓') : null,
         ]
       ),
-
+      h(
+        DropdownMenuItem,
+        {
+          key: 'expanse',
+          closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
+          onClick: () => props.dispatch(actions.setProviderType('expanse')),
+          style: {
+            fontSize: '18px',
+          },
+        },
+        [
+          h('.menu-icon.diamond-expanse'),
+          'Main Expanse Network',
+          providerType === 'expanse' ? h('.check', '✓') : null,
+        ]
+      ),
       h(
         DropdownMenuItem,
         {
@@ -680,6 +695,8 @@ App.prototype.getNetworkName = function() {
     name = 'Main Ethereum Network'
   } else if (providerName === 'classic') {
     name = 'Main Ethereum Classic Network'
+  } else if (providerName === 'ubiq') {
+    name = 'Main UBIQ Network'
   } else if (providerName === 'ropsten') {
     name = 'Ropsten Test Network'
   } else if (providerName === 'kovan') {
