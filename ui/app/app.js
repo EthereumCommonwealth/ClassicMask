@@ -326,7 +326,7 @@ App.prototype.renderNetworkDropdown = function() {
           closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
           onClick: () => props.dispatch(actions.setProviderType('ropsten')),
           style: {
-            fontSize: '18px',
+            fontSize: '14px',
           },
         },
         [
@@ -343,7 +343,7 @@ App.prototype.renderNetworkDropdown = function() {
           closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
           onClick: () => props.dispatch(actions.setProviderType('kovan')),
           style: {
-            fontSize: '18px',
+            fontSize: '14px',
           },
         },
         [
@@ -360,7 +360,7 @@ App.prototype.renderNetworkDropdown = function() {
           closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
           onClick: () => props.dispatch(actions.setProviderType('rinkeby')),
           style: {
-            fontSize: '18px',
+            fontSize: '14px',
           },
         },
         [
@@ -377,7 +377,7 @@ App.prototype.renderNetworkDropdown = function() {
           closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
           onClick: () => props.dispatch(actions.setDefaultRpcTarget()),
           style: {
-            fontSize: '18px',
+            fontSize: '14px',
           },
         },
         [
@@ -396,7 +396,7 @@ App.prototype.renderNetworkDropdown = function() {
           closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
           onClick: () => this.props.dispatch(actions.showConfigPage()),
           style: {
-            fontSize: '18px',
+            fontSize: '14px',
           },
         },
         [
