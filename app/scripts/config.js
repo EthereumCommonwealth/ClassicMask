@@ -1,6 +1,7 @@
 const MAINET_RPC_URL = 'https://mainnet.infura.io/metamask'
 const CLASSIC_RPC_URL = 'https://mewapi.epool.io'
 const EXPANSE_RPC_URL = 'https://node.expanse.tech'
+const UBIQ_RPC_URL = 'https://rpc1.ubiqscan.io'
 const ROPSTEN_RPC_URL = 'https://ropsten.infura.io/metamask'
 const KOVAN_RPC_URL = 'https://kovan.infura.io/metamask'
 const RINKEBY_RPC_URL = 'https://rinkeby.infura.io/metamask'
@@ -15,6 +16,7 @@ module.exports = {
     rinkeby: RINKEBY_RPC_URL,
     classic: CLASSIC_RPC_URL,
     expanse: EXPANSE_RPC_URL,
+    ubiq: UBIQ_RPC_URL,
   },
   networkNames: {
     2: 'Expanse',

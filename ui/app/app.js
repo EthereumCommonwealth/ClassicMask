@@ -319,6 +319,22 @@ App.prototype.renderNetworkDropdown = function() {
           providerType === 'expanse' ? h('.check', '✓') : null,
         ]
       ),
+      // h(
+      //   DropdownMenuItem,
+      //   {
+      //     key: 'ubiq',
+      //     closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
+      //     onClick: () => props.dispatch(actions.setProviderType('ubiq')),
+      //     style: {
+      //       fontSize: '18px',
+      //     },
+      //   },
+      //   [
+      //     h('.menu-icon.diamond-ubiq'),
+      //     'Main Ubiq Network',
+      //     providerType === 'ubiq' ? h('.check', '✓') : null,
+      //   ]
+      // ),
       h(
         DropdownMenuItem,
         {

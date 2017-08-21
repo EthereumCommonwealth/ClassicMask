@@ -48,6 +48,9 @@ Network.prototype.render = function () {
   } else if (providerName === 'expanse') {
     hoverText = 'Main Expanse Network'
     iconName = 'expanse-network'
+  } else if (providerName === 'ubiq') {
+    hoverText = 'Main Ubiq Network'
+    iconName = 'ubiq-network'
   } else if (providerName === 'ropsten') {
     hoverText = 'Ropsten Test Network'
     iconName = 'ropsten-test-network'
@@ -98,6 +101,15 @@ Network.prototype.render = function () {
                   color: '#f1c70e',
                 }},
               'Expanse Main Net'),
+            ])
+          case 'ubiq-network':
+            return h('.network-indicator', [
+              h('.menu-icon.diamond-ubiq'),
+              h('.network-name', {
+                style: {
+                  color: '#f1c70e',
+                }},
+              'UBIQ Main Net'),
             ])
           case 'ropsten-test-network':
             return h('.network-indicator', [
