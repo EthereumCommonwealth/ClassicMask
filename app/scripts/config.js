@@ -26,5 +26,6 @@ module.exports = {
   },
   networkIdAlterantiveChains: {
    classic: 61,
+   expanse: 2,
  },
 }
