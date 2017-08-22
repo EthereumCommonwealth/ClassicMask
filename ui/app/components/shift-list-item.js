@@ -67,7 +67,7 @@ function formatDate (date) {
 
 ShiftListItem.prototype.renderUtilComponents = function () {
   var props = this.props
-  const { conversionRate, currentCurrency } = props
+  const { conversionRate, currentCurrency, network } = props
 
   switch (props.response.status) {
     case 'no_deposits':
@@ -102,6 +102,7 @@ ShiftListItem.prototype.renderUtilComponents = function () {
           value: `${props.response.outgoingCoin}`,
           conversionRate,
           currentCurrency,
+          network,
           width: '55px',
           shorten: true,
           needsParse: false,
