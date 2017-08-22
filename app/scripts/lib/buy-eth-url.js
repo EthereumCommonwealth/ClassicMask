@@ -19,6 +19,7 @@ function getBuyEthUrl ({ network, amount, address }) {
       url = 'https://github.com/kovan-testnet/faucet'
       break
 
+    case 2:
     case 61:
       url = 'https://changelly.com?ref_id=e4cc9313b7ed'
       break
