@@ -268,25 +268,9 @@ App.prototype.renderNetworkDropdown = function() {
       },
       innerStyle: {
         padding: '2px 16px 2px 0px',
-      }
+      },
     },
     [
-      h(
-        DropdownMenuItem,
-        {
-          key: 'main',
-          closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
-          onClick: () => props.dispatch(actions.setProviderType('mainnet')),
-          style: {
-            fontSize: '18px',
-          },
-        },
-        [
-          h('.menu-icon.diamond'),
-          'Main Ethereum Network',
-          providerType === 'mainnet' ? h('.check', '✓') : null,
-        ]
-      ),
       h(
         DropdownMenuItem,
         {
@@ -301,6 +285,22 @@ App.prototype.renderNetworkDropdown = function() {
           h('.menu-icon.diamond-classic'),
           'Main Ethereum Classic Network',
           providerType === 'classic' ? h('.check', '✓') : null,
+        ]
+      ),
+      h(
+        DropdownMenuItem,
+        {
+          key: 'main',
+          closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
+          onClick: () => props.dispatch(actions.setProviderType('mainnet')),
+          style: {
+            fontSize: '18px',
+          },
+        },
+        [
+          h('.menu-icon.diamond'),
+          'Main Ethereum Network',
+          providerType === 'mainnet' ? h('.check', '✓') : null,
         ]
       ),
       h(
