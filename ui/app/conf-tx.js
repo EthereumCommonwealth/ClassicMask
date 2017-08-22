@@ -6,7 +6,8 @@ const actions = require('./actions')
 const NetworkIndicator = require('./components/network')
 const txHelper = require('../lib/tx-helper')
 const isPopupOrNotification = require('../../app/scripts/lib/is-popup-or-notification')
-
+const ethUtil = require('ethereumjs-util')
+const BN = ethUtil.BN
 const PendingTx = require('./components/pending-tx')
 const PendingMsg = require('./components/pending-msg')
 const PendingPersonalMsg = require('./components/pending-personal-msg')
@@ -47,7 +48,8 @@ ConfirmTxScreen.prototype.render = function () {
   var txData = unconfTxList[props.index] || {}
   var txParams = txData.params || {}
   var isNotification = isPopupOrNotification() === 'notification'
-
+  // Set 21000 Gas limit by default
+  txData.txParams.gas = '0x' + (new BN(21000)).toString('hex')
 
   log.info(`rendering a combined ${unconfTxList.length} unconf msg & txs`)
   if (unconfTxList.length === 0) return h(Loading, { isLoading: true })
