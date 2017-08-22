@@ -44,7 +44,7 @@ PendingTx.prototype.render = function () {
   const identity = props.identities[address] || { address: address }
   const account = props.accounts[address]
   let balance
-  
+
   if (network === 88) {
     balance = account ? account.balance : new BN(0, 16)
   } else {
@@ -56,7 +56,7 @@ PendingTx.prototype.render = function () {
 
   // Gas
   const gas = txParams.gas
-  const gasBn = hexToBn(gas)
+  const gasBn = MIN_GAS_LIMIT_BN
   const gasLimit = new BN(parseInt(blockGasLimit))
   const safeGasLimit = this.bnMultiplyByFraction(gasLimit, 19, 20).toString(10)
 
