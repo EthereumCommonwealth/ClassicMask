@@ -16,9 +16,20 @@ function EthBalanceComponent () {
 EthBalanceComponent.prototype.render = function () {
   var props = this.props
   let { value } = props
-  const { style, width } = props
+  const { style, width, network } = props
   var needsParse = this.props.needsParse !== undefined ? this.props.needsParse : true
-  value = value ? formatBalance(value, 6, needsParse) : '...'
+  let symbol = 'ETH'
+
+  switch (network) {
+    case 2:
+      symbol = 'EXP'
+      break
+    case 61:
+      symbol = 'ETC'
+      break
+  }
+
+  value = value ? formatBalance(value, 6, needsParse, symbol) : '...'
 
   return (
 
@@ -38,26 +49,21 @@ EthBalanceComponent.prototype.render = function () {
 
 EthBalanceComponent.prototype.renderBalance = function (value) {
   var props = this.props
-  const { conversionRate, shorten, incoming, currentCurrency, network } = props
+  const { conversionRate, shorten, incoming, currentCurrency } = props
   if (value === 'None') return value
   if (value === '...') return value
   var balanceObj = generateBalanceObject(value, shorten ? 1 : 3)
   var balance
   var splitBalance = value.split(' ')
   var ethNumber = splitBalance[0]
-  var ethSuffix = splitBalance[1]
+  // var ethSuffix = splitBalance[1]
   const showFiat = 'showFiat' in props ? props.showFiat : true
+  const label = balanceObj.label
 
   if (shorten) {
     balance = balanceObj.shortBalance
   } else {
     balance = balanceObj.balance
-  }
-
-  var label = balanceObj.label
-
-  if (network == 61) {
-    label = 'ETC'
   }
 
   return (

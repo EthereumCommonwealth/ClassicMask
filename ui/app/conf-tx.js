@@ -100,6 +100,7 @@ ConfirmTxScreen.prototype.render = function () {
         conversionRate,
         currentCurrency,
         blockGasLimit,
+        network: network,
         // Actions
         buyEth: this.buyEth.bind(this, txParams.from || props.selectedAddress),
         sendTransaction: this.sendTransaction.bind(this),
