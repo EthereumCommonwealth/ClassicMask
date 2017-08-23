@@ -49,7 +49,9 @@ ConfirmTxScreen.prototype.render = function () {
   var txParams = txData.params || {}
   var isNotification = isPopupOrNotification() === 'notification'
   // Set 21000 Gas limit by default
-  txData.txParams.gas = '0x' + (new BN(21000)).toString('hex')
+  if (txData.txParams) {
+    txData.txParams.gas = '0x' + (new BN(21000)).toString('hex')
+  }
 
   log.info(`rendering a combined ${unconfTxList.length} unconf msg & txs`)
   if (unconfTxList.length === 0) return h(Loading, { isLoading: true })
