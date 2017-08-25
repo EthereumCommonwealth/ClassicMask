@@ -2,6 +2,16 @@
 
 ## Current Master
 
+## 3.9.11 2017-8-24
+
+- Fix nonce calculation bug that would sometimes generate very wrong nonces.
+- Give up resubmitting a transaction after 3500 blocks.
+
+## 3.9.10 2017-8-23
+
+- Improve nonce calculation, to prevent bug where people are unable to send transactions reliably.
+- Remove link to eth-tx-viz from identicons in tx history.
+
 ## 3.9.9 2017-8-18
 
 - Fix bug where some transaction submission errors would show an empty screen.

@@ -33,6 +33,17 @@ module.exports = class TransactionController extends EventEmitter {
           err: undefined,
         })
       },
+      getConfirmedTransactions: (address) => {
+        return this.getFilteredTxList({
+          from: address,
+          status: 'confirmed',
+          err: undefined,
+        })
+      },
+      giveUpOnTransaction: (txId) => {
+        const msg = `Gave up submitting after 3500 blocks un-mined.`
+        this.setTxStatusFailed(txId, msg)
+      },
     })
     this.query = new EthQuery(this.provider)
     this.txProviderUtil = new TxProviderUtil(this.provider)
