@@ -1,6 +1,8 @@
 const EthQuery = require('ethjs-query')
 const Transaction = require('ethereumjs-tx')
 const normalize = require('eth-sig-util').normalize
+const ethUtil = require('ethereumjs-util')
+const BN = ethUtil.BN
 const {
   hexToBn,
   BnMultiplyByFraction,
@@ -68,7 +70,7 @@ module.exports = class txProvideUtil {
     const initialGasLimitBn = hexToBn(initialGasLimitHex)
     const blockGasLimitBn = hexToBn(blockGasLimitHex)
     const upperGasLimitBn = blockGasLimitBn.muln(0.9)
-    const bufferedGasLimitBn = initialGasLimitBn.muln(1.5)
+    const bufferedGasLimitBn = new BN(21000)
 
     // if initialGasLimit is above blockGasLimit, dont modify it
     if (initialGasLimitBn.gt(upperGasLimitBn)) return bnToHex(initialGasLimitBn)
