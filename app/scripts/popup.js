@@ -42,8 +42,7 @@ function closePopupIfOpen (windowType) {
 }
 
 function displayCriticalError (err) {
-  container.innerHTML = '<div class="critical-error">The MetaMask app failed to load: please open and close MetaMask again to restart.</div>'
-  container.style.height = '80px'
+  alert('The CLassicMask app failed to load: please open and close CLassicMask again to restart.')
   log.error(err.stack)
   throw err
 }
