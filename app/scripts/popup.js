@@ -42,7 +42,7 @@ function closePopupIfOpen (windowType) {
 }
 
 function displayCriticalError (err) {
-  alert('The CLassicMask app failed to load: please open and close MetaMask again to restart.')
+  alert('The CLassicMask app failed to load: please open and close CLassicMask again to restart.')
   log.error(err.stack)
   throw err
 }
