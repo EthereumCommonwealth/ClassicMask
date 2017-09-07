@@ -1,7 +1,7 @@
 const inherits = require('util').inherits
 const Component = require('react').Component
 const h = require('react-hyperscript')
-const Identicon = require('./identicon').default
+const Identicon = require('./identicon')
 
 module.exports = AccountPanel
 
@@ -71,3 +71,4 @@ AccountPanel.prototype.genIcon = function (seed, picOrder) {
     }),
   ])
 }
+

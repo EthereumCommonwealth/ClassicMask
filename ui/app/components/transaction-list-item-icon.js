@@ -3,7 +3,7 @@ const h = require('react-hyperscript')
 const inherits = require('util').inherits
 const Tooltip = require('./tooltip')
 
-const Identicon = require('./identicon').default
+const Identicon = require('./identicon')
 
 module.exports = TransactionIcon
 
