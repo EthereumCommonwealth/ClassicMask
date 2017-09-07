@@ -1,27 +1,25 @@
 const Component = require('react').Component
 const h = require('react-hyperscript')
-const inherits = require('util').inherits
-const isNode = require('detect-node')
-const findDOMNode = require('react-dom').findDOMNode
-const jazzicon = require('jazzicon')
-const iconFactoryGen = require('../../lib/icon-factory')
-const iconFactory = iconFactoryGen(jazzicon)
+const blockies = require('ethereum-blockies')
 
-module.exports = IdenticonComponent
+class IdenticonComponent extends Component {
+  constructor (props) {
+    super(props)
+    this.defaultDiameter = 46
+  }
 
-inherits(IdenticonComponent, Component)
-function IdenticonComponent () {
-  Component.call(this)
-
-  this.defaultDiameter = 46
-}
-
-IdenticonComponent.prototype.render = function () {
-  var props = this.props
-  var diameter = props.diameter || this.defaultDiameter
-  return (
-    h('div', {
-      key: 'identicon-' + this.props.address,
+  render () {
+    var props = this.props
+    var diameter = props.diameter || this.defaultDiameter
+    const content = blockies.create({
+      seed: props.address || '0x00',
+      size: 8,
+      scale: 16,
+      color: '#4541AD',
+      bgcolor: '#DAEC19',
+      spotcolor: -1,
+    }).toDataURL()
+    return h('img', {
       style: {
         display: 'flex',
         alignItems: 'center',
@@ -30,43 +28,12 @@ IdenticonComponent.prototype.render = function () {
         width: diameter,
         borderRadius: diameter / 2,
         overflow: 'hidden',
+        backgroundImage: 'url(' + content + ')',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
       },
     })
-  )
-}
-
-IdenticonComponent.prototype.componentDidMount = function () {
-  var props = this.props
-  const { address } = props
-
-  if (!address) return
-
-  var container = findDOMNode(this)
-
-  var diameter = props.diameter || this.defaultDiameter
-  if (!isNode) {
-    var img = iconFactory.iconForAddress(address, diameter)
-    container.appendChild(img)
   }
 }
 
-IdenticonComponent.prototype.componentDidUpdate = function () {
-  var props = this.props
-  const { address } = props
-
-  if (!address) return
-
-  var container = findDOMNode(this)
-
-  var children = container.children
-  for (var i = 0; i < children.length; i++) {
-    container.removeChild(children[i])
-  }
-
-  var diameter = props.diameter || this.defaultDiameter
-  if (!isNode) {
-    var img = iconFactory.iconForAddress(address, diameter)
-    container.appendChild(img)
-  }
-}
-
+export default IdenticonComponent
