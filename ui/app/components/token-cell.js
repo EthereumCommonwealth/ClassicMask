@@ -1,7 +1,7 @@
 const Component = require('react').Component
 const h = require('react-hyperscript')
 const inherits = require('util').inherits
-const Identicon = require('./identicon').default
+const Identicon = require('./identicon')
 const prefixForNetwork = require('../../lib/etherscan-prefix-for-network')
 
 module.exports = TokenCell
@@ -69,3 +69,4 @@ function etherscanLinkFor (tokenAddress, address, network) {
 function tokenFactoryFor (tokenAddress) {
   return `https://tokenfactory.surge.sh/#/token/${tokenAddress}`
 }
+

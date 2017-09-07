@@ -6,7 +6,7 @@ const genAccountLink = require('../../lib/account-link.js')
 const connect = require('react-redux').connect
 const Dropdown = require('./dropdown').Dropdown
 const DropdownMenuItem = require('./dropdown').DropdownMenuItem
-const Identicon = require('./identicon').default
+const Identicon = require('./identicon')
 const ethUtil = require('ethereumjs-util')
 const copyToClipboard = require('copy-to-clipboard')
 
@@ -111,7 +111,6 @@ class AccountDropdowns extends Component {
                   marginLeft: '10px',
                 },
                 diameter: 32,
-                address: '0x00',
               },
             ),
             h('span', { style: { marginLeft: '20px', fontSize: '24px' } }, 'Create Account'),
@@ -131,7 +130,6 @@ class AccountDropdowns extends Component {
                   marginLeft: '10px',
                 },
                 diameter: 32,
-                address: '0x01',
               },
             ),
             h('span', {

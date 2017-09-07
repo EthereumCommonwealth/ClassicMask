@@ -1,25 +1,27 @@
 const Component = require('react').Component
 const h = require('react-hyperscript')
-const blockies = require('ethereum-blockies')
+const inherits = require('util').inherits
+const isNode = require('detect-node')
+const findDOMNode = require('react-dom').findDOMNode
+const jazzicon = require('jazzicon')
+const iconFactoryGen = require('../../lib/icon-factory')
+const iconFactory = iconFactoryGen(jazzicon)
 
-class IdenticonComponent extends Component {
-  constructor (props) {
-    super(props)
-    this.defaultDiameter = 46
-  }
+module.exports = IdenticonComponent
 
-  render () {
-    var props = this.props
-    var diameter = props.diameter || this.defaultDiameter
-    const content = blockies.create({
-      seed: props.address || '0x00',
-      size: 8,
-      scale: 16,
-      color: '#4541AD',
-      bgcolor: '#DAEC19',
-      spotcolor: -1,
-    }).toDataURL()
-    return h('img', {
+inherits(IdenticonComponent, Component)
+function IdenticonComponent () {
+  Component.call(this)
+
+  this.defaultDiameter = 46
+}
+
+IdenticonComponent.prototype.render = function () {
+  var props = this.props
+  var diameter = props.diameter || this.defaultDiameter
+  return (
+    h('div', {
+      key: 'identicon-' + this.props.address,
       style: {
         display: 'flex',
         alignItems: 'center',
@@ -28,12 +30,43 @@ class IdenticonComponent extends Component {
         width: diameter,
         borderRadius: diameter / 2,
         overflow: 'hidden',
-        backgroundImage: 'url(' + content + ')',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
       },
     })
+  )
+}
+
+IdenticonComponent.prototype.componentDidMount = function () {
+  var props = this.props
+  const { address } = props
+
+  if (!address) return
+
+  var container = findDOMNode(this)
+
+  var diameter = props.diameter || this.defaultDiameter
+  if (!isNode) {
+    var img = iconFactory.iconForAddress(address, diameter)
+    container.appendChild(img)
   }
 }
 
-export default IdenticonComponent
+IdenticonComponent.prototype.componentDidUpdate = function () {
+  var props = this.props
+  const { address } = props
+
+  if (!address) return
+
+  var container = findDOMNode(this)
+
+  var children = container.children
+  for (var i = 0; i < children.length; i++) {
+    container.removeChild(children[i])
+  }
+
+  var diameter = props.diameter || this.defaultDiameter
+  if (!isNode) {
+    var img = iconFactory.iconForAddress(address, diameter)
+    container.appendChild(img)
+  }
+}
+
