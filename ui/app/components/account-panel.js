@@ -1,7 +1,7 @@
 const inherits = require('util').inherits
 const Component = require('react').Component
 const h = require('react-hyperscript')
-const Identicon = require('./identicon')
+const Identicon = require('./identicon').default
 const formatBalance = require('../util').formatBalance
 const addressSummary = require('../util').addressSummary
 
