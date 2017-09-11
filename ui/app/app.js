@@ -213,6 +213,7 @@ App.prototype.renderAppBar = function() {
                       identities: this.props.identities,
                       selected: this.props.currentView.context,
                       network: this.props.network,
+                      keyrings: this.props.keyrings,
                     },
                     []
                   ),
