@@ -1,6 +1,14 @@
 # Changelog
 
 ## Current Master
+- Readded loose keyring label back into the account list.
+- Remove cryptonator from chrome permissions.
+- Add info on token contract addresses.
+- Add validation preventing users from inputting their own addresses as token tracking addresses.
+
+## 3.9.13 2017-9-8
+
+- Changed the way we initialize the inpage provider to fix a bug affecting some developers.
 
 - Make eth_sign deprecation warning less noisy
 - Add useful link to eth_sign deprecation warning.

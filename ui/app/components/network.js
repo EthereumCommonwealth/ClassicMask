@@ -22,7 +22,7 @@ Network.prototype.render = function () {
   let iconName, hoverText
 
   if (networkNumber === 'loading') {
-    return h('span', {
+    return h('span.pointer', {
       style: {
         display: 'flex',
         alignItems: 'center',
@@ -37,7 +37,7 @@ Network.prototype.render = function () {
         },
         src: 'images/loading.svg',
       }),
-      h('i.fa.fa-sort-desc'),
+      h('i.fa.fa-caret-down'),
     ])
   } else if (providerName === 'mainnet') {
     hoverText = 'Main Ethereum Network'
@@ -82,7 +82,8 @@ Network.prototype.render = function () {
                 style: {
                   color: '#039396',
                 }},
-              'Ethereum Main Net'),
+              'Main Network'),
+              h('i.fa.fa-caret-down.fa-lg'),
             ])
           case 'ethereum-classic-network':
             return h('.network-indicator', [
@@ -119,6 +120,7 @@ Network.prototype.render = function () {
                   color: '#ff6666',
                 }},
               'Ropsten Test Net'),
+              h('i.fa.fa-caret-down.fa-lg'),
             ])
           case 'kovan-test-network':
             return h('.network-indicator', [
@@ -128,6 +130,7 @@ Network.prototype.render = function () {
                   color: '#690496',
                 }},
               'Kovan Test Net'),
+              h('i.fa.fa-caret-down.fa-lg'),
             ])
           case 'rinkeby-test-network':
             return h('.network-indicator', [
@@ -137,6 +140,7 @@ Network.prototype.render = function () {
                   color: '#e7a218',
                 }},
               'Rinkeby Test Net'),
+              h('i.fa.fa-caret-down.fa-lg'),
             ])
           default:
             return h('.network-indicator', [
@@ -152,6 +156,7 @@ Network.prototype.render = function () {
                   color: '#AEAEAE',
                 }},
               'Private Network'),
+              h('i.fa.fa-caret-down.fa-lg'),
             ])
         }
       })(),

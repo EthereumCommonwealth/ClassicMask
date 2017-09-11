@@ -40,8 +40,13 @@ function App() {
   Component.call(this)
 }
 
-function mapStateToProps(state) {
-  const { identities, accounts, address } = state.metamask
+function mapStateToProps (state) {
+  const {
+    identities,
+    accounts,
+    address,
+    keyrings,
+  } = state.metamask
   const selected = address || Object.keys(accounts)[0]
 
   return {
@@ -67,7 +72,8 @@ function mapStateToProps(state) {
 
     // state needed to get account dropdown temporarily rendering from app bar
     identities,
-    selected
+    selected,
+    keyrings,
   }
 }
 
@@ -141,8 +147,8 @@ App.prototype.renderAppBar = function() {
             background: props.isUnlocked ? 'white' : 'none',
             height: '38px',
             position: 'relative',
-            zIndex: 12
-          }
+            zIndex: 12,
+          },
         },
         [
           h(
@@ -151,15 +157,15 @@ App.prototype.renderAppBar = function() {
               style: {
                 display: 'flex',
                 flexDirection: 'row',
-                alignItems: 'center'
-              }
+                alignItems: 'center',
+              },
             },
             [
               // mini logo
               h('img', {
                 height: 24,
                 width: 24,
-                src: '/images/etc-logo.png'
+                src: '/images/etc-logo.png',
               }),
 
               h(NetworkIndicator, {
