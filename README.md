@@ -64,7 +64,7 @@ To write tests that will be run in the browser using QUnit, add your test files 
 ## Other Docs
 
 - [How to add custom build to Chrome](./docs/add-to-chrome.md)
-- [How to add custom build to Firefox](./docs/add-to-firefox.md)
+- [How to add custom build to Firefox](./docs/add-to-firef.md)
 - [How to develop a live-reloading UI](./docs/ui-dev-mode.md)
 - [Publishing Guide](./docs/publishing.md)
 - [How to develop an in-browser mocked UI](./docs/ui-mock-mode.md)
