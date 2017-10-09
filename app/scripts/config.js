@@ -5,11 +5,13 @@ const UBIQ_RPC_URL = 'https://rpc1.ubiqscan.io'
 const ROPSTEN_RPC_URL = 'https://ropsten.infura.io/metamask'
 const KOVAN_RPC_URL = 'https://kovan.infura.io/metamask'
 const RINKEBY_RPC_URL = 'https://rinkeby.infura.io/metamask'
+const LOCALHOST_RPC_URL = 'http://localhost:8545'
 
 global.METAMASK_DEBUG = 'GULP_METAMASK_DEBUG'
 
 module.exports = {
   network: {
+    localhost: LOCALHOST_RPC_URL,
     mainnet: MAINET_RPC_URL,
     ropsten: ROPSTEN_RPC_URL,
     kovan: KOVAN_RPC_URL,
