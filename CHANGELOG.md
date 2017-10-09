@@ -2,6 +2,40 @@
 
 ## Current Master
 
+- Fix bug where some transactions would be shown as pending forever, even after successfully mined.
+
+## 3.10.9 2017-10-5
+
+- Only rebrodcast transactions for a day not a days worth of blocks
+- Remove Slack link from info page, since it is a big phishing target.
+- Stop computing balance based on pending transactions, to avoid edge case where users are unable to send transactions.
+
+## 3.10.8 2017-9-28
+
+- Fixed usage of new currency fetching API.
+
+## 3.10.7 2017-9-28
+
+- Fixed bug where sometimes the current account was not correctly set and exposed to web apps.
+- Added AUD, HKD, SGD, IDR, PHP to currency conversion list
+
+## 3.10.6 2017-9-27
+
+- Fix bug where newly created accounts were not selected.
+- Fix bug where selected account was not persisted between lockings.
+
+## 3.10.5 2017-9-27
+
+- Fix block gas limit estimation.
+
+## 3.10.4 2017-9-27
+
+- Fix bug that could mis-render token balances when very small. (Not actually included in 3.9.9)
+- Fix memory leak warning.
+- Fix bug where new event filters would not include historical events.
+
+## 3.10.3 2017-9-21
+
 - Fix bug where metamask-dapp connections are lost on rpc error
 - Fix bug that would sometimes display transactions as failed that could be successfully mined.
 
@@ -18,7 +52,8 @@ rollback to 3.10.0 due to bug
 - Fixed a long standing memory leak associated with filters installed by dapps
 - Fix link to support center.
 - Fixed tooltip icon locations to avoid overflow.
-- Warn users when a dapp proposes a high gas limit (90% of blockGasLimit or higher)
+- Warn users when a dapp proposes a high gas limit (90% of blockGasLimit or higher
+- Sort currencies by currency name (thanks to strelok1: https://github.com/strelok1).
 
 ## 3.10.0 2017-9-11
 
@@ -27,6 +62,7 @@ rollback to 3.10.0 due to bug
 - Add info on token contract addresses.
 - Add validation preventing users from inputting their own addresses as token tracking addresses.
 - Added button to reject all transactions (thanks to davidp94! https://github.com/davidp94)
+
 
 ## 3.9.13 2017-9-8
 
