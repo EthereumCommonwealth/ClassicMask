@@ -419,7 +419,7 @@ App.prototype.renderNetworkDropdown = function() {
           closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
           onClick: () => this.props.dispatch(actions.showConfigPage()),
           style: {
-            fontSize: '14px',
+            fontSize: '18px',
           },
         },
         [
