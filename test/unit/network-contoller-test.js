@@ -14,15 +14,15 @@ describe('# Network Controller', function () {
       },
     })
 
-    networkController.initializeProvider(networkControllerProviderInit, dummyProviderConstructor)
+    networkController.initializeProvider(networkControllerProviderInit)
   })
   describe('network', function () {
     describe('#provider', function () {
       it('provider should be updatable without reassignment', function () {
-        networkController.initializeProvider(networkControllerProviderInit, dummyProviderConstructor)
-        const provider = networkController.provider
-        networkController._provider = {test: true}
-        assert.ok(provider.test)
+        networkController.initializeProvider(networkControllerProviderInit)
+        const providerProxy = networkController.providerProxy
+        providerProxy.setTarget({ test: true })
+        assert.ok(providerProxy.test)
       })
     })
     describe('#getNetworkState', function () {
@@ -65,19 +65,5 @@ describe('# Network Controller', function () {
     })
   })
 })
-
-function dummyProviderConstructor() {
-  return {
-    // provider
-    sendAsync: noop,
-    // block tracker
-    start: noop,
-    stop: noop,
-    on: noop,
-    addListener: noop,
-    once: noop,
-    removeAllListeners: noop,
-  }
-}
 
 function noop() {}
