@@ -21,7 +21,7 @@ function getBuyEthUrl ({ network, amount, address }) {
 
     case 2:
     case 61:
-      url = 'https://changelly.com?ref_id=e4cc9313b7ed'
+      url = 'https://shapeshift.io/'
       break
   }
   return url
