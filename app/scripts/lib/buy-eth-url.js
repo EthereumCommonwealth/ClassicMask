@@ -21,7 +21,7 @@ function getBuyEthUrl ({ network, amount, address }) {
 
     case 2:
     case 61:
-      url = 'https://shapeshift.io/'
+      url = 'https://changenow.io/?utm_source=Classic+Ethereum+Wallet'
       break
   }
   return url
