@@ -1,5 +1,5 @@
 const MAINET_RPC_URL = 'https://mainnet.infura.io/metamask'
-const CLASSIC_RPC_URL = 'https://mewapi.epool.io'
+const CLASSIC_RPC_URL = 'https://etcrpc.viperid.online'
 const EXPANSE_RPC_URL = 'https://node.expanse.tech'
 const UBIQ_RPC_URL = 'https://rpc1.ubiqscan.io'
 const ROPSTEN_RPC_URL = 'https://ropsten.infura.io/metamask'
