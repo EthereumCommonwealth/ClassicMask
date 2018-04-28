@@ -215,7 +215,10 @@ gulp.task('zip:chrome', zipTask('chrome'))
 gulp.task('zip:firefox', zipTask('firefox'))
 gulp.task('zip:edge', zipTask('edge'))
 gulp.task('zip:opera', zipTask('opera'))
-gulp.task('zip', gulp.parallel('zip:chrome', 'zip:firefox', 'zip:edge', 'zip:opera'))
+gulp.task('zip:src', zipSrcTask())
+gulp.task('zip', gulp.parallel('zip:chrome', 'zip:firefox', 'zip:edge', 'zip:opera', 'zip:src'))
+
+
 
 // high level tasks
 
@@ -250,6 +253,21 @@ function zipTask(target) {
     return gulp.src(`dist/${target}/**`)
     .pipe(zip(`metamask-${target}-${manifest.version}.zip`))
     .pipe(gulp.dest('builds'));
+  }
+}
+
+// Firefox wants original source code (excluding known libs)
+function zipSrcTask() {
+  return () => {
+    return gulp.src([
+      `**`,
+      `!builds`, `!builds/**`,
+      `!dist`, `!dist/**`,
+      `!node_modules`, `!node_modules/**`,
+      `!.*/` // don't include hidden folders, including .git
+    ], { followSymlinks: false })
+    .pipe(zip(`metamask-src-${manifest.version}.zip`))
+    .pipe(gulp.dest('builds/src'));
   }
 }
 

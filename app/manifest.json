@@ -1,7 +1,7 @@
 {
   "name": "CLassicMask",
   "short_name": "CLassicMask",
-  "version": "3.9.15",
+  "version": "3.9.16",
   "manifest_version": 2,
   "author": "https://metamask.io",
   "description": "Ethereum Browser Extension",
@@ -21,7 +21,7 @@
   },
   "applications": {
     "gecko": {
-      "id": "dexaran@ethereumclassic.org"
+      "id": "classicmask@shampoosham.win"
     }
   },
   "default_locale": "en",
