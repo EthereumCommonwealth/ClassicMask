@@ -79,8 +79,26 @@ module.exports = class txProvideUtil {
   }
 
   async validateTxParams (txParams) {
-    if (('value' in txParams) && txParams.value.indexOf('-') === 0) {
-      throw new Error(`Invalid transaction value of ${txParams.value} not a positive number.`)
+    this.validateRecipient(txParams)
+    if ('value' in txParams) {
+      const value = txParams.value.toString()
+      if (value.includes('-')) {
+        throw new Error(`Invalid transaction value of ${txParams.value} not a positive number.`)
+      }
+      if (value.includes('.')) {
+        throw new Error(`Invalid transaction value of ${txParams.value} number must be in wei`)
+      }
     }
+  }
+
+  validateRecipient (txParams) {
+    if (txParams.to === '0x' || txParams.to === '') {
+      if (txParams.data) {
+        delete txParams.to
+      } else {
+        throw new Error('Invalid recipient address')
+      }
+    }
+    return txParams
   }
 }
