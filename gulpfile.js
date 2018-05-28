@@ -19,6 +19,8 @@ var manifest = require('./app/manifest.json')
 var gulpif = require('gulp-if')
 var replace = require('gulp-replace')
 var mkdirp = require('mkdirp')
+var asyncEach = require('async/each')
+var exec = require('child_process').exec
 
 var disableDebugTools = gutil.env.disableDebugTools
 var debug = gutil.env.debug
@@ -120,11 +122,17 @@ gulp.task('manifest:production', function() {
     './dist/firefox/manifest.json',
     './dist/chrome/manifest.json',
     './dist/edge/manifest.json',
+    './dist/opera/manifest.json',
   ],{base: './dist/'})
+
+  // Exclude chromereload script in production:
   .pipe(gulpif(!debug,jsoneditor(function(json) {
-    json.background.scripts = ["scripts/background.js"]
+    json.background.scripts = json.background.scripts.filter((script) => {
+      return !script.includes('chromereload')
+    })
     return json
   })))
+
   .pipe(gulp.dest('./dist/', { overwrite: true }))
 })
 
@@ -147,6 +155,18 @@ gulp.task('copy:watch', function(){
   gulp.watch(['./app/{_locales,images}/*', './app/scripts/chromereload.js', './app/*.{html,json}'], gulp.series('copy'))
 })
 
+// record deps
+
+gulp.task('deps', function (cb) {
+  exec('npm ls', (err, stdoutOutput, stderrOutput) => {
+    if (err) return cb(err)
+    const browsers = ['firefox','chrome','edge','opera']
+    asyncEach(browsers, (target, done) => {
+      fs.writeFile(`./dist/${target}/deps.txt`, stdoutOutput, done)
+    }, cb)
+  })
+})
+
 // lint js
 
 gulp.task('lint', function () {
@@ -158,6 +178,13 @@ gulp.task('lint', function () {
     .pipe(eslint.format())
     // To have the process exit with an error code (1) on
     // lint error, return the stream and pipe to failAfterError last.
+    .pipe(eslint.failAfterError())
+});
+
+gulp.task('lint:fix', function () {
+  return gulp.src(['app/**/*.js', 'ui/**/*.js', 'mascara/src/*.js', 'mascara/server/*.js', '!node_modules/**', '!dist/firefox/**', '!docs/**', '!app/scripts/chromereload.js', '!mascara/test/jquery-3.1.0.min.js'])
+    .pipe(eslint(Object.assign(fs.readFileSync(path.join(__dirname, '.eslintrc')), {fix: true})))
+    .pipe(eslint.format())
     .pipe(eslint.failAfterError())
 });
 
@@ -221,7 +248,7 @@ gulp.task('zip', gulp.parallel('zip:chrome', 'zip:firefox', 'zip:edge', 'zip:ope
 
 gulp.task('dev', gulp.series('dev:js', 'copy', gulp.parallel('copy:watch', 'dev:reload')))
 
-gulp.task('build', gulp.series('clean', gulp.parallel('build:js', 'copy')))
+gulp.task('build', gulp.series('clean', gulp.parallel('build:js', 'copy', 'deps')))
 gulp.task('dist', gulp.series('build', 'zip'))
 
 // task generators

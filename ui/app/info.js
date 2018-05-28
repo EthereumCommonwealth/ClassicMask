@@ -70,4 +70,3 @@ InfoScreen.prototype.render = function () {
 InfoScreen.prototype.navigateTo = function (url) {
   global.platform.openWindow({ url })
 }
-
