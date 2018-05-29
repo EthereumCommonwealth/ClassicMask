@@ -27,6 +27,9 @@ EthBalanceComponent.prototype.render = function () {
     case 61:
       symbol = 'ETC'
       break
+    case 820:
+      symbol = 'CLO'
+      break
   }
 
   value = value ? formatBalance(value, 6, needsParse, symbol) : '...'
