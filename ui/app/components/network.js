@@ -45,6 +45,9 @@ Network.prototype.render = function () {
   } else if (providerName === 'classic') {
     hoverText = 'Main Ethereum Classic Network'
     iconName = 'ethereum-classic-network'
+  } else if (providerName === 'callisto') {
+    hoverText = 'Main Callisto Network'
+    iconName = 'callisto-network'
   } else if (providerName === 'expanse') {
     hoverText = 'Main Expanse Network'
     iconName = 'expanse-network'
@@ -93,6 +96,15 @@ Network.prototype.render = function () {
                   color: '#4fb858',
                 }},
               'Ethereum Classic Main Net'),
+            ])
+          case 'callisto-network':
+            return h('.network-indicator', [
+              h('.menu-icon.diamond-classic'),
+              h('.network-name', {
+                style: {
+                  color: '#4fb858',
+                }},
+              'Callisto Main Net'),
             ])
           case 'expanse-network':
             return h('.network-indicator', [

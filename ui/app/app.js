@@ -313,6 +313,22 @@ App.prototype.renderNetworkDropdown = function() {
       h(
         DropdownMenuItem,
         {
+          key: 'callisto',
+          closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
+          onClick: () => props.dispatch(actions.setProviderType('callisto')),
+          style: {
+            fontSize: '18px',
+          },
+        },
+        [
+          h('.menu-icon.diamond-classic'),
+          'Main Callisto Network',
+          providerType === 'callisto' ? h('.check', '✓') : null,
+        ]
+      ),
+      h(
+        DropdownMenuItem,
+        {
           key: 'main',
           closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
           onClick: () => props.dispatch(actions.setProviderType('mainnet')),
@@ -755,6 +771,8 @@ App.prototype.getNetworkName = function() {
     name = 'Main Ethereum Network'
   } else if (providerName === 'classic') {
     name = 'Main Ethereum Classic Network'
+  } else if (providerName === 'callisto') {
+    name = 'Main Callisto Network'
   } else if (providerName === 'ubiq') {
     name = 'Main UBIQ Network'
   } else if (providerName === 'ropsten') {

@@ -20,6 +20,9 @@ module.exports = function (address, network) {
     case 61: // ethereum classic net
       link = `https://gastracker.io/addr/${address}`
       break
+    case 820: // callisto net
+      link = `https://explorer.callisto.network/account/${address}`
+      break
     default:
       link = ''
       break

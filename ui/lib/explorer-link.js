@@ -4,6 +4,8 @@ module.exports = function (hash, network) {
   const prefix = prefixForNetwork(network)
   if (network === 61) {
     return `https://gastracker.io/tx/${hash}`
+  } else if (network === 820) {
+    return `https://explorer.callisto.network/tx/${hash}`
   }
   return `http://${prefix}etherscan.io/tx/${hash}`
 }

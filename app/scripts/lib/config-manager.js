@@ -5,6 +5,7 @@ const MetamaskConfig = require('../config.js')
 
 const MAINNET_RPC = MetamaskConfig.network.mainnet
 const CLASSIC_RPC = MetamaskConfig.network.classic
+const CALLISTO_RPC = MetamaskConfig.network.callisto
 const EXPANSE_RPC = MetamaskConfig.network.expanse
 const UBIQ_RPC = MetamaskConfig.network.ubiq
 const ROPSTEN_RPC = MetamaskConfig.network.ropsten
@@ -150,6 +151,9 @@ ConfigManager.prototype.getCurrentRpcAddress = function () {
 
     case 'classic':
       return CLASSIC_RPC
+
+    case 'callisto':
+      return CALLISTO_RPC
 
     case 'expanse':
       return EXPANSE_RPC
