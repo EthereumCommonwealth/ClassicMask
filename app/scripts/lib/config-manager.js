@@ -8,6 +8,7 @@ const CLASSIC_RPC = MetamaskConfig.network.classic
 const CALLISTO_RPC = MetamaskConfig.network.callisto
 const EXPANSE_RPC = MetamaskConfig.network.expanse
 const UBIQ_RPC = MetamaskConfig.network.ubiq
+const SOCIAL_RPC = MetamaskConfig.network.social
 const ROPSTEN_RPC = MetamaskConfig.network.ropsten
 const KOVAN_RPC = MetamaskConfig.network.kovan
 const RINKEBY_RPC = MetamaskConfig.network.rinkeby
@@ -160,6 +161,9 @@ ConfigManager.prototype.getCurrentRpcAddress = function () {
 
     case 'ubiq':
       return UBIQ_RPC
+
+    case 'social':
+      return SOCIAL_RPC
 
     case 'ropsten':
       return ROPSTEN_RPC

@@ -358,6 +358,22 @@ App.prototype.renderNetworkDropdown = function() {
           providerType === 'expanse' ? h('.check', '✓') : null,
         ]
       ),
+      h(
+        DropdownMenuItem,
+        {
+          key: 'social',
+          closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
+          onClick: () => props.dispatch(actions.setProviderType('social')),
+          style: {
+            fontSize: '18px',
+          },
+        },
+        [
+          h('.menu-icon.diamond'),
+          'Main Ethereum Social Network',
+          providerType === 'social' ? h('.check', '✓') : null,
+        ]
+      ),
       // h(
       //   DropdownMenuItem,
       //   {
@@ -775,6 +791,8 @@ App.prototype.getNetworkName = function() {
     name = 'Main Callisto Network'
   } else if (providerName === 'ubiq') {
     name = 'Main UBIQ Network'
+  } else if (providerName === 'social') {
+    name = 'Main Ethereum Social Network'
   } else if (providerName === 'ropsten') {
     name = 'Ropsten Test Network'
   } else if (providerName === 'kovan') {
