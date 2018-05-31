@@ -54,6 +54,9 @@ Network.prototype.render = function () {
   } else if (providerName === 'ubiq') {
     hoverText = 'Main Ubiq Network'
     iconName = 'ubiq-network'
+  } else if (providerName === 'social') {
+    hoverText = 'Main Ethereum Social Network'
+    iconName = 'social-network'
   } else if (providerName === 'ropsten') {
     hoverText = 'Ropsten Test Network'
     iconName = 'ropsten-test-network'
@@ -123,6 +126,15 @@ Network.prototype.render = function () {
                   color: '#f1c70e',
                 }},
               'UBIQ Main Net'),
+            ])
+          case 'social-network':
+            return h('.network-indicator', [
+              h('.menu-icon.diamond'),
+              h('.network-name', {
+                style: {
+                  color: '#039396',
+                }},
+              'Ethereum Social Main Net'),
             ])
           case 'ropsten-test-network':
             return h('.network-indicator', [

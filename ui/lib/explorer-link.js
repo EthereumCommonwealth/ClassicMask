@@ -6,6 +6,8 @@ module.exports = function (hash, network) {
     return `https://gastracker.io/tx/${hash}`
   } else if (network === 820) {
     return `https://explorer.callisto.network/tx/${hash}`
+  } else if (network === 28) {
+    return `https://explorer.ethereumsocial.kr/tx/${hash}`
   }
   return `http://${prefix}etherscan.io/tx/${hash}`
 }

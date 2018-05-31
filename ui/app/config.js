@@ -208,6 +208,10 @@ function currentProviderDisplay (metamaskState) {
       title = 'Current Network'
       value = 'Main Expanse Network'
       break
+    case 'social':
+      title = 'Current Network'
+      value = 'Main Ethereum Social Network'
+      break
     case 'ropsten':
       title = 'Current Network'
       value = 'Ropsten Test Network'

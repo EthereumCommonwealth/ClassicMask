@@ -23,6 +23,9 @@ module.exports = function (address, network) {
     case 820: // callisto net
       link = `https://explorer.callisto.network/account/${address}`
       break
+    case 28: // ethereum social net
+      link = `https://explorer.ethereumsocial.kr/addr/${address}`
+      break
     default:
       link = ''
       break
