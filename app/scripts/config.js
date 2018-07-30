@@ -8,6 +8,7 @@ const ROPSTEN_RPC_URL = 'https://ropsten.infura.io/metamask'
 const KOVAN_RPC_URL = 'https://kovan.infura.io/metamask'
 const RINKEBY_RPC_URL = 'https://rinkeby.infura.io/metamask'
 const LOCALHOST_RPC_URL = 'http://localhost:8696'
+const ATHEIOS_RPC_URL = 'https://wallet.atheios.com:8797'
 
 global.METAMASK_DEBUG = 'GULP_METAMASK_DEBUG'
 
@@ -23,6 +24,7 @@ module.exports = {
     social: SOCIAL_RPC_URL,
     expanse: EXPANSE_RPC_URL,
     ubiq: UBIQ_RPC_URL,
+    atheios: ATHEIOS_RPC_URL,
   },
   networkNames: {
     2: 'Expanse',
@@ -30,11 +32,13 @@ module.exports = {
     4: 'Rinkeby',
     28: 'Social',
     42: 'Kovan',
+    11235813: 'Atheios',
   },
   networkIdAlterantiveChains: {
    classic: 61,
    callisto: 820,
    social: 28,
    expanse: 2,
+   atheios: 1620,
  },
 }
