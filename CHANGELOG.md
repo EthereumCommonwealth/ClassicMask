@@ -471,7 +471,7 @@ rollback to 3.10.0 due to bug
 
 - Add support for the new, default Ropsten Test Network.
 - Fix bug that would cause MetaMask to occasionally lose its StreamProvider connection and drop requests.
-- Fix bug that would cause the Custom RPC menu item to not appear when Localhost 8545 was selected.
+- Fix bug that would cause the Custom RPC menu item to not appear when Localhost 8696 was selected.
 - Point ropsten faucet button to actual faucet.
 - Phase out ethereumjs-util from our encryptor module.
 
@@ -796,7 +796,7 @@ popup notification opens up.
 - Fix bug on config screen where current RPC address was always displayed wrong.
 - Fixed bug where entering a decimal value when sending a transaction would result in sending the wrong amount.
 - Add save button to custom RPC input field.
-- Add quick-select button for RPC on `localhost:8545`.
+- Add quick-select button for RPC on `localhost:8696`.
 - Improve config view styling.
 - Users have been migrated from old test-net RPC to a newer test-net RPC.
 

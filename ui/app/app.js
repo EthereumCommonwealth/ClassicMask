@@ -453,8 +453,8 @@ App.prototype.renderNetworkDropdown = function() {
         },
         [
           h('i.fa.fa-question-circle.fa-lg.menu-icon'),
-          'Localhost 8545',
-          activeNetwork === 'http://localhost:8545' ? h('.check', '✓') : null,
+          'Localhost 8696',
+          activeNetwork === 'http://localhost:8696' ? h('.check', '✓') : null,
         ]
       ),
 
@@ -761,7 +761,7 @@ App.prototype.renderCustomOption = function(provider) {
   }
 
   switch (rpcTarget) {
-    case 'http://localhost:8545':
+    case 'http://localhost:8696':
       return null
 
     default:
@@ -811,7 +811,7 @@ App.prototype.renderCommonRpc = function(rpcList, provider) {
   const rpcTarget = provider.rpcTarget
 
   return rpcList.map(rpc => {
-    if (rpc === 'http://localhost:8545' || rpc === rpcTarget) {
+    if (rpc === 'http://localhost:8696' || rpc === rpcTarget) {
       return null
     } else {
       return h(
