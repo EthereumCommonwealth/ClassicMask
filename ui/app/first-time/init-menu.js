@@ -57,7 +57,7 @@ InitializeMenuScreen.prototype.renderMenu = function (state) {
           color: '#7F8082',
           marginBottom: 10,
         },
-      }, 'CLassicMask'),
+      }, 'ATHMask'),
 
 
       h('div', [

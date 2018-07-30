@@ -149,6 +149,6 @@ function triggerUi () {
 // On first install, open a window to MetaMask website to how-it-works.
 extension.runtime.onInstalled.addListener(function (details) {
   if ((details.reason === 'install') && (!METAMASK_DEBUG)) {
-    extension.tabs.create({url: 'https://ethereumclassic.github.io/'})
+    extension.tabs.create({url: 'https://atheios.com/'})
   }
 })

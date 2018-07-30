@@ -42,7 +42,7 @@ function closePopupIfOpen (windowType) {
 }
 
 function displayCriticalError (err) {
-  alert('The CLassicMask app failed to load: please open and close CLassicMask again to restart.')
+  alert('The ATHMask app failed to load: please open and close ATHMask again to restart.')
   log.error(err.stack)
   throw err
 }

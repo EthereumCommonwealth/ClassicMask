@@ -39,6 +39,9 @@ Network.prototype.render = function () {
       }),
       h('i.fa.fa-caret-down'),
     ])
+  } else if (providerName === 'atheios') {
+    hoverText = 'Main Atheios Network'
+    iconName = 'ethereum-network'
   } else if (providerName === 'mainnet') {
     hoverText = 'Main Ethereum Network'
     iconName = 'ethereum-network'

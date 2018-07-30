@@ -36,7 +36,7 @@ Mascot.prototype.render = function() {
   return h('img', {
     height: 200,
     width: 200,
-    src: '/images/etc-logo.svg',
+    src: '/images/icon-512.png',
   })
 }
 //

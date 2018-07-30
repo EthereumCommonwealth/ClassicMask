@@ -188,6 +188,10 @@ function currentProviderDisplay (metamaskState) {
 
   switch (provider.type) {
 
+    case 'atheios':
+      title = 'Current Network'
+      value = 'Main Atheios Network'
+      break
     case 'mainnet':
       title = 'Current Network'
       value = 'Main Ethereum Network'

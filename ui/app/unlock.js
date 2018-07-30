@@ -44,7 +44,7 @@ UnlockScreen.prototype.render = function () {
             color: '#7F8082',
             margin: '1em 0',
           },
-        }, 'ClassicMask'),
+        }, 'ATHMask'),
 
         h('input.large-input', {
           type: 'password',

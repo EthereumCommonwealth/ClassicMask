@@ -181,7 +181,7 @@ App.prototype.renderAppBar = function() {
               h('img', {
                 height: 24,
                 width: 24,
-                src: '/images/etc-logo.png',
+                src: '/images/icon-32.png',
               }),
 
               h(NetworkIndicator, {
@@ -206,7 +206,7 @@ App.prototype.renderAppBar = function() {
                   left: '9px',
                 },
               },
-              'CLassicMask'
+              'ATHMask'
             ),
 
           props.isUnlocked &&
@@ -374,22 +374,22 @@ App.prototype.renderNetworkDropdown = function() {
           providerType === 'social' ? h('.check', '✓') : null,
         ]
       ),
-      // h(
-      //   DropdownMenuItem,
-      //   {
-      //     key: 'ubiq',
-      //     closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
-      //     onClick: () => props.dispatch(actions.setProviderType('ubiq')),
-      //     style: {
-      //       fontSize: '18px',
-      //     },
-      //   },
-      //   [
-      //     h('.menu-icon.diamond-ubiq'),
-      //     'Main Ubiq Network',
-      //     providerType === 'ubiq' ? h('.check', '✓') : null,
-      //   ]
-      // ),
+      h(
+        DropdownMenuItem,
+        {
+          key: 'atheios',
+          closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
+          onClick: () => props.dispatch(actions.setProviderType('atheios')),
+          style: {
+            fontSize: '18px',
+          },
+        },
+        [
+          h('.menu-icon.diamond'),
+          'Main Atheios Network',
+          providerType === 'atheios' ? h('.check', '✓') : null,
+        ]
+      ),
       h(
         DropdownMenuItem,
         {
@@ -791,6 +791,8 @@ App.prototype.getNetworkName = function() {
     name = 'Main Callisto Network'
   } else if (providerName === 'ubiq') {
     name = 'Main UBIQ Network'
+  } else if (providerName === 'atheios') {
+    name = 'Main Atheios Network'
   } else if (providerName === 'social') {
     name = 'Main Ethereum Social Network'
   } else if (providerName === 'ropsten') {

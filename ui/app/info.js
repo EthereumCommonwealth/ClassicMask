@@ -46,7 +46,7 @@ InfoScreen.prototype.render = function () {
           // current version number
 
           h('.info.info-gray', [
-            h('div', 'ClassicMask'),
+            h('div', 'ATHMask'),
             h('div', {
               style: {
                 marginBottom: '10px',
