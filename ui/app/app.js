@@ -242,7 +242,7 @@ App.prototype.renderAppBar = function() {
                     barHeight: 2,
                     padding: 0,
                     isOpen: state.isMainMenuOpen,
-                    color: '#4fb858',
+                    color: '#0099ff',
                     onClick: () => {
                       this.setState({
                         isMainMenuOpen: !state.isMainMenuOpen,

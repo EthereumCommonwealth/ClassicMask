@@ -108,7 +108,7 @@ Network.prototype.render = function () {
               h('.menu-icon.diamond-classic'),
               h('.network-name', {
                 style: {
-                  color: '#4fb858',
+                  color: '#0099ff',
                 }},
               'Ethereum Classic Main Net'),
             ])
@@ -117,7 +117,7 @@ Network.prototype.render = function () {
               h('.menu-icon.diamond-classic'),
               h('.network-name', {
                 style: {
-                  color: '#4fb858',
+                  color: '#0099ff',
                 }},
               'Callisto Main Net'),
             ])

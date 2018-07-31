@@ -80,7 +80,7 @@ input[type="submit"] {
   transform-origin: center center;
   transition: transform 50ms ease-in;
   /* default orange */
-  background: #009241;
+  background: #0099ff;
   box-shadow: 0px 3px 6px rgba(122, 195, 114, 0.36);
 }
 
@@ -138,7 +138,7 @@ app
 
 button.primary {
   padding: 8px 12px;
-  background: #009241;
+  background: #0099ff;
   box-shadow: 0px 3px 6px rgba(122, 195, 114, 0.36);
   color: white;
   font-size: 1.1em;
@@ -475,7 +475,7 @@ input.large-input {
   margin-bottom: 2px;
   font-size: 11px;
   text-rendering: geometricPrecision;
-  color: #4fb858;
+  color: #0099ff;
 }
 .name-label:hover .edit-text {
   visibility: visible;
@@ -509,7 +509,7 @@ input.large-input {
 /* Ether Balance Widget */
 
 .ether-balance-amount {
-  color: #4fb858;
+  color: #0099ff;
 }
 
 .ether-balance-label {
