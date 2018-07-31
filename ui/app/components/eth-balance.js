@@ -33,6 +33,9 @@ EthBalanceComponent.prototype.render = function () {
     case 28:
       symbol = 'ETSC'
       break
+    case 1620:
+      symbol = 'ATH'
+      break
   }
 
   value = value ? formatBalance(value, 6, needsParse, symbol) : '...'

@@ -41,7 +41,7 @@ Network.prototype.render = function () {
     ])
   } else if (providerName === 'atheios') {
     hoverText = 'Main Atheios Network'
-    iconName = 'ethereum-network'
+    iconName = 'atheios-network'
   } else if (providerName === 'mainnet') {
     hoverText = 'Main Ethereum Network'
     iconName = 'ethereum-network'
@@ -93,6 +93,15 @@ Network.prototype.render = function () {
                 }},
               'Main Network'),
               h('i.fa.fa-caret-down.fa-lg'),
+            ])
+            case 'atheios-network':
+            return h('.network-indicator', [
+              h('.menu-icon.diamond'),
+              h('.network-name', {
+                style: {
+                  color: '#0099ff',
+                }},
+              'Atheios Main Net'),
             ])
           case 'ethereum-classic-network':
             return h('.network-indicator', [

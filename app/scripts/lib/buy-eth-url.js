@@ -23,6 +23,11 @@ function getBuyEthUrl ({ network, amount, address }) {
     case 61:
       url = 'https://changenow.io/?utm_source=Classic+Ethereum+Wallet'
       break
+      
+    case 1620:  
+    case 11235813:
+      url = 'https://app.stocks.exchange/en/basic-trade/pair/BTC/ATH/1D'
+      break
   }
   return url
 }

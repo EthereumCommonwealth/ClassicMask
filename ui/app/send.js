@@ -275,7 +275,7 @@ SendTransactionScreen.prototype.onSubmit = function () {
   }
 
   if (input < 0) {
-    message = 'Can not send negative amounts of ETH.'
+    message = 'Can not send negative amounts of ATH.'
     return this.props.dispatch(actions.displayWarning(message))
   }
 
