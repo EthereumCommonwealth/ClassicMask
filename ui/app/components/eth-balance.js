@@ -18,7 +18,7 @@ EthBalanceComponent.prototype.render = function () {
   let { value } = props
   const { style, width, network } = props
   var needsParse = this.props.needsParse !== undefined ? this.props.needsParse : true
-  let symbol = 'ETH'
+  let symbol = 'ATH'
 
   switch (network) {
     case 2:
@@ -66,7 +66,7 @@ EthBalanceComponent.prototype.renderBalance = function (value) {
   var splitBalance = value.split(' ')
   var ethNumber = splitBalance[0]
   // var ethSuffix = splitBalance[1]
-  const showFiat = 'showFiat' in props ? props.showFiat : true
+  const showFiat = false //'showFiat' in props ? props.showFiat : true
   const label = balanceObj.label
 
   if (shorten) {

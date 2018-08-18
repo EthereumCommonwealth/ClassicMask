@@ -3,7 +3,7 @@ module.exports = function (address, network) {
   let link
   switch (net) {
     case 1: // main net
-      link = `https://etherscan.io/address/${address}`
+      link = `https://scan.atheios.com/addr/${address}`
       break
     case 2: // morden test net
       link = `https://morden.etherscan.io/address/${address}`
@@ -25,6 +25,9 @@ module.exports = function (address, network) {
       break
     case 28: // ethereum social net
       link = `https://explorer.ethereumsocial.kr/addr/${address}`
+      break
+    case 1620: // atheios
+      link = `https://scan.atheios.com/addr/${address}`
       break
     default:
       link = ''

@@ -9,5 +9,5 @@ module.exports = function (hash, network) {
   } else if (network === 28) {
     return `https://explorer.ethereumsocial.kr/tx/${hash}`
   }
-  return `http://${prefix}etherscan.io/tx/${hash}`
+  return `https://scan.atheios.com/tx/${hash}`
 }

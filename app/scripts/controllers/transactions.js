@@ -188,7 +188,7 @@ module.exports = class TransactionController extends EventEmitter {
     if (!gasPrice) {
       gasPrice = this.getGasPrice ? this.getGasPrice() : await this.query.gasPrice()
     }
-    txParams.gasPrice = ethUtil.addHexPrefix(gasPrice.toString(16))
+    txParams.gasPrice = ethUtil.addHexPrefix('4E3B29200') //ethUtil.addHexPrefix(gasPrice.toString(16))
     txParams.value = txParams.value || '0x0'
     // set gasLimit
     return await this.txGasUtil.analyzeGasUsage(txMeta)

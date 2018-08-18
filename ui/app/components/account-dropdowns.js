@@ -164,7 +164,7 @@ class AccountDropdowns extends Component {
   renderAccountOptions () {
     const { actions, network } = this.props
     const { optionsMenuActive } = this.state
-    let blockExplorerName = 'Etherscan'
+    let blockExplorerName = 'Explorer'
 
     if (network === 61) {
       blockExplorerName = 'Gastracker'
@@ -187,18 +187,18 @@ class AccountDropdowns extends Component {
         },
       },
       [
-        h(
-          DropdownMenuItem,
-          {
-            closeMenu: () => {},
-            onClick: () => {
-              const { selected, network } = this.props
-              const url = genAccountLink(selected, network)
-              global.platform.openWindow({ url })
-            },
-          },
-          `View account on ${blockExplorerName}`,
-        ),
+        // h(
+        //   DropdownMenuItem,
+        //   {
+        //     closeMenu: () => {},
+        //     onClick: () => {
+        //       const { selected, network } = this.props
+        //       const url = genAccountLink(selected, network)
+        //       global.platform.openWindow({ url })
+        //     },
+        //   },
+        //   `View account on ${blockExplorerName}`,
+        // ),
         h(
           DropdownMenuItem,
           {

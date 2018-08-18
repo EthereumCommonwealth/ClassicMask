@@ -9,7 +9,7 @@ module.exports = {
   config: {},
   NetworkController: {
     provider: {
-      type: (METAMASK_DEBUG || env === 'test') ? 'rinkeby' : 'classic',
+      type: (METAMASK_DEBUG || env === 'test') ? 'rinkeby' : 'atheios',
     },
   },
 }
