@@ -1,18 +1,1 @@
-const createStore = require('redux').createStore
-const applyMiddleware = require('redux').applyMiddleware
-const thunkMiddleware = require('redux-thunk')
-const createLogger = require('redux-logger')
-const rootReducer = function () {}
-
-module.exports = configureStore
-
-const loggerMiddleware = createLogger()
-
-const createStoreWithMiddleware = applyMiddleware(
-  thunkMiddleware,
-  loggerMiddleware
-)(createStore)
-
-function configureStore (initialState) {
-  return createStoreWithMiddleware(rootReducer, initialState)
-}
+const createStore=require('redux').createStore const applyMiddleware=require('redux').applyMiddleware const thunkMiddleware=require('redux-thunk') const createLogger=require('redux-logger') const rootReducer=function(){} module.exports=configureStore const loggerMiddleware=createLogger() const createStoreWithMiddleware=applyMiddleware(thunkMiddleware,loggerMiddleware)(createStore) function configureStore(initialState){return createStoreWithMiddleware(rootReducer,initialState)}

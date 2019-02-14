@@ -1,12 +1,1 @@
-var manifest = require('../app/manifest.json')
-var version = manifest.version
-
-var fs = require('fs')
-var path = require('path')
-var changelog = fs.readFileSync(path.join(__dirname, '..', 'CHANGELOG.md')).toString()
-
-var log = changelog.split(version)[1].split('##')[0].trim()
-
-let msg = `*MetaMask ${version}* now published to the Chrome Store! It should auto-update soon!\n${log}`
-
-console.log(msg)
+const beefy=require('beefy')const http=require('http')const fs=require('fs')const path=require('path')const port=8124const handler=beefy({entries:{'mocker.js':'bundle.js'},cwd:__dirname,live:true,open:true,quiet:false,bundlerFlags:['-t','brfs']})http.createServer(handler).listen(port)console.log(`Now listening on port ${port}`)
